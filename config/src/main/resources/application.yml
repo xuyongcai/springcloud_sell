@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: config
+  cloud:
+    config:
+      server:
+        git:
+          uri:  https://github.com/xuyongcai/config-repo
+#          username: ##
+#          password: ##
+          basedir: C:\Users\passion\IdeaProjects\SpringCloud\config\basedir
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+eureka:
+  client:
+    service-url:
+      defaultZone:  http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+
+#springcloud-bus需暴露出内容接口，用于发送消息(从github上更新的配置文件)到rabbitmq消息中间件上
+#另外，接收消息的其他模块需要配合@RefleshScope注解使用，才能实现自动刷新
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+server:
+  port: 8080
