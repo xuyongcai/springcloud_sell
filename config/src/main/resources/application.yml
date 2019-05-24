@@ -6,9 +6,9 @@ spring:
       server:
         git:
           uri:  https://github.com/xuyongcai/config-repo
-#          username: ##
-#          password: ##
-          basedir: C:\Users\passion\IdeaProjects\SpringCloud\config\basedir
+          username: ###
+          password: ###
+          basedir: /Users/xuyongcai/IdeaProjects/springcloud_sell/config/basedir
   rabbitmq:
     host: localhost
     port: 5672
